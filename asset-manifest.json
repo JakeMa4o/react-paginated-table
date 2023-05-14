@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-paginated-table/static/css/main.fbfb3b7b.css",
+    "main.js": "/react-paginated-table/static/js/main.3ee2d15e.js",
+    "index.html": "/react-paginated-table/index.html",
+    "main.fbfb3b7b.css.map": "/react-paginated-table/static/css/main.fbfb3b7b.css.map",
+    "main.3ee2d15e.js.map": "/react-paginated-table/static/js/main.3ee2d15e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fbfb3b7b.css",
+    "static/js/main.3ee2d15e.js"
+  ]
+}
