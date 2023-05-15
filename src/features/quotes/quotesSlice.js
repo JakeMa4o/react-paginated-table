@@ -2,7 +2,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 
 // API call
 
-const url = `${process.env.REACT_APP_IEX_API_URL}&types=quote&symbols=aapl,fb,tsla,acb,acre,googl&token=${process.env.REACT_APP_API_TOKEN}`;
+const url = `https://cloud.iexapis.com/v1/stock/market/batch?&types=quote&symbols=aapl,fb,tsla,acb,acre,googl&token=${process.env.REACT_APP_API_TOKEN}`;
+console.log(process.env)
 
 
 export const getQuotes = createAsyncThunk("quotes/getQuotes", () => {
