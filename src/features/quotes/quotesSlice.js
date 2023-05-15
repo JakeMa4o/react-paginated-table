@@ -1,9 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
-
 // API call
 
-const url = `https://cloud.iexapis.com/v1/stock/market/batch?&types=quote&symbols=aapl,fb,tsla,acb,acre,googl&token=${process.env.REACT_APP_API_TOKEN}`;
-console.log(process.env)
+const url = `https://cloud.iexapis.com/v1/stock/market/batch?&types=quote&symbols=aapl,fb,tsla,acb,acre,googl,nflx&token=${process.env.REACT_APP_API_TOKEN}`;
 
 
 export const getQuotes = createAsyncThunk("quotes/getQuotes", () => {
@@ -32,6 +30,12 @@ const quotesSlice = createSlice({
       },
       navigateToNext: (state) => {
         state.currentPage += 1;
+      },
+      updateDnD: (state, {payload}) => {
+        const copyData = payload.data.map(x => x);
+        const [reorderedItem] = copyData.splice(payload.source.index, 1);
+        copyData.splice(payload.destination.index, 0, reorderedItem);
+        state.data = copyData;
       }
     },
     extraReducers: {
@@ -49,6 +53,6 @@ const quotesSlice = createSlice({
     }
 })
 
-export const {navigateToNext, navigateToPrev, changeCurrentPage} = quotesSlice.actions;
+export const {navigateToNext, navigateToPrev, changeCurrentPage, updateDnD} = quotesSlice.actions;
 
 export default quotesSlice.reducer;
