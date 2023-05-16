@@ -1,9 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral&display=swap');
+
+
 .App {
     border-radius: 1rem;
     max-width: 90%;
     margin: 20rem auto;
     padding: 1rem;
     background-color: #fff;
+    position: relative;
+}
+
+h1 {
+    padding: 0 1rem;
+    margin-bottom: 0;
 }
 
 table {
@@ -15,36 +24,62 @@ thead {
     color:rgba(154, 154, 154, 0.738);
 }
 
-thead > tr > th:first-child {
-    text-align: left;
-}
-
 tbody > tr > td {
     padding: 1rem;
     font-weight: bold;
 }
+
 tbody > tr > td:first-child {
     text-align: left;
 }
 
+
+.golden-stock {
+    color: #FFD700;
+}
+
 .navigation {
     display: flex;
-    /* border: 1px solid #000; */
     justify-content: center;
     padding: 1rem;
     gap: 1rem;
 }
 
+.dollar-sign {
+    background-image: linear-gradient(60deg, #FFD700, #747474);
+    background-clip: text;
+    color: transparent;
+    margin-right: .3rem;
+    font-size: 1.2rem;
+}
+
 .navigation > button {
-    /* all: unset; */
-    padding: .5rem .7rem;
-    border-radius: .3rem;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
     border: 1.7px solid rgba(173, 173, 173, 0.738);
-    background-color: #fff;
+    font-weight: 550;
+    background-color: #fff !important;
     cursor: pointer;
 }
 
+.navigation button:hover {
+    background-image: linear-gradient(120deg, #FFD700, #FFD700, #ddd7ac);
+    background-color: #FFD700;
+}
+
 .active {
-    color: rgb(52, 45, 241);
-    border-color: rgb(52, 45, 241) !important;
+    background-image: linear-gradient(120deg, #FFD700, #FFD700, #ddd7ac);;
+}
+
+.symbol, .company.name {
+    font-family: 'Spectral', serif;
+}
+
+.negative {
+    color: red;
+}
+
+
+.positive {
+    color: green;
 }

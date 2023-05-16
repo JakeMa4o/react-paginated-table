@@ -14,7 +14,7 @@ const Content = () => {
     function handleOnDragEnd (result) {
         const {destination, source} = result;
         if (!destination) return;
-        
+
         dispatch(updateDnD({data, destination, source}));
     }
 
@@ -23,11 +23,13 @@ const Content = () => {
             <table>
                 <thead>
                     <tr>
-                        <th>avgTotalVolume</th>
-                        <th>calculationPrice</th>
-                        <th>avgTotalVolume</th>
-                        <th>id</th>
-                        <th>currency</th>
+                        <th></th>
+                        <th>Symbol</th>
+                        <th>Total Volume</th>
+                        <th>Market cap</th>
+                        <th>Latest change</th>
+                        <th>Change percent</th>
+                        <th>LatestTime</th>
                     </tr>
                 </thead>
                 <DragDropContext onDragEnd={handleOnDragEnd}>
@@ -38,12 +40,14 @@ const Content = () => {
                                     return (
                                         <Draggable key={i} draggableId={i.toString()} index={i}>
                                             {(provided) => (
-                                                <tr {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
-                                                    <td>{quote.avgTotalVolume}</td>
-                                                    <td>{quote.calculationPrice}</td>
-                                                    <td>{quote.avgTotalVolume}</td>
-                                                    <td>{quote.id}</td>
-                                                    <td>{quote.currency}</td>
+                                                <tr className='quote' {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
+                                                    <td className='company-name'>{quote.companyName}</td>
+                                                    <td className='symbol'>{quote.symbol}</td>
+                                                    <td>{quote.avgTotalVolume.toLocaleString()}</td>
+                                                    <td><span className='dollar-sign'>$</span>{quote.marketCap.toLocaleString("en-US")}</td>
+                                                    <td className={quote.change < 0 ? "negative" : "positive"}>{quote.change}</td>
+                                                    <td className={quote.changePercent < 0 ? "negative" : "positive"}>{(quote.changePercent * 100).toFixed(2)}%</td>
+                                                    <td>{quote.latestTime}</td>
                                                 </tr>
                                             )}
                                         </Draggable>
