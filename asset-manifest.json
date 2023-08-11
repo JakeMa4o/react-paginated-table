@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/react-paginated-table/static/css/main.68bf0a37.css",
-    "main.js": "/react-paginated-table/static/js/main.36db44ea.js",
+    "main.css": "/react-paginated-table/static/css/main.f41aa3b1.css",
+    "main.js": "/react-paginated-table/static/js/main.0178a9fd.js",
     "index.html": "/react-paginated-table/index.html",
-    "main.68bf0a37.css.map": "/react-paginated-table/static/css/main.68bf0a37.css.map",
-    "main.36db44ea.js.map": "/react-paginated-table/static/js/main.36db44ea.js.map"
+    "main.f41aa3b1.css.map": "/react-paginated-table/static/css/main.f41aa3b1.css.map",
+    "main.0178a9fd.js.map": "/react-paginated-table/static/js/main.0178a9fd.js.map"
   },
   "entrypoints": [
-    "static/css/main.68bf0a37.css",
-    "static/js/main.36db44ea.js"
+    "static/css/main.f41aa3b1.css",
+    "static/js/main.0178a9fd.js"
   ]
 }
