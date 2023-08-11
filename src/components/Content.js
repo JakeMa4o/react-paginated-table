@@ -20,45 +20,45 @@ const Content = () => {
 
     return (
         <div className='content'>
-            <table>
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Symbol</th>
-                        <th>Total Volume</th>
-                        <th>Market cap</th>
-                        <th>Latest change</th>
-                        <th>Change percent</th>
-                        <th>LatestTime</th>
-                    </tr>
-                </thead>
+            <div className='table'>
+                <div className='thead'>
+                    <div className='tr'>
+                        <div className='th'></div>
+                        <div className='th'>Symbol</div>
+                        <div className='th'>Total Volume</div>
+                        <div className='th'>Market cap</div>
+                        <div className='th'>Latest change</div>
+                        <div className='th'>Change percent</div>
+                        <div className='th'>LatestTime</div>
+                    </div>
+                </div>
                 <DragDropContext onDragEnd={handleOnDragEnd}>
                     <Droppable droppableId='quotes'>
                         {(provided) => (
-                            <tbody {...provided.droppableProps} ref={provided.innerRef}>
+                            <div {...provided.droppableProps} ref={provided.innerRef} className='tbody'>
                                 {records.map(({ quote }, i) => {
                                     return (
                                         <Draggable key={i} draggableId={i.toString()} index={i}>
                                             {(provided) => (
-                                                <tr className='quote' {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
-                                                    <td className='company-name'>{quote.companyName}</td>
-                                                    <td className='symbol'>{quote.symbol}</td>
-                                                    <td>{quote.avgTotalVolume.toLocaleString()}</td>
-                                                    <td><span className='dollar-sign'>$</span>{quote.marketCap.toLocaleString("en-US")}</td>
-                                                    <td className={quote.change < 0 ? "negative" : "positive"}>{quote.change}</td>
-                                                    <td className={quote.changePercent < 0 ? "negative" : "positive"}>{(quote.changePercent * 100).toFixed(2)}%</td>
-                                                    <td>{quote.latestTime}</td>
-                                                </tr>
+                                                <div className='quote tr' {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
+                                                    <div className='company_name td'>{quote.companyName}</div>
+                                                    <div className='symbol td'>{quote.symbol}</div>
+                                                    <div className='td'>{quote.avgTotalVolume.toLocaleString()}</div>
+                                                    <div className='td'><span className='dollar-sign'>$</span>{quote.marketCap.toLocaleString("en-US")}</div>
+                                                    <div className={quote.change < 0 ? "negative td" : "positive td"}>{quote.change}</div>
+                                                    <div className={quote.changePercent < 0 ? "negative td" : "positive td"}>{(quote.changePercent * 100).toFixed(2)}%</div>
+                                                    <div className='td'>{quote.latestTime}</div>
+                                                </div>
                                             )}
                                         </Draggable>
                                     )
                                 })}
                                 {provided.placeholder}
-                            </tbody>
+                            </div>
                         )}
                     </Droppable>
                 </DragDropContext>
-            </table>
+            </div>
         </div>
     )
 }

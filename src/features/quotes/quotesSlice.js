@@ -1,7 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 // API call
 
-const url = `https://cloud.iexapis.com/v1/stock/market/batch?&types=quote&symbols=aapl,fb,tsla,googl,amzn,msft,meta,dis,nflx,sony,pep,tm&token=${process.env.REACT_APP_API_TOKEN}`;
+// const url = `https://cloud.iexapis.com/v1/stock/market/batch?&types=quote&symbols=aapl,fb,tsla,googl,amzn,msft,meta,dis,nflx,sony,pep,tm&token=${process.env.REACT_APP_API_TOKEN}`;
+const url = `https://cloud.iexapis.com/v1/stock/market/batch?&types=quote&symbols=aapl,fb,tsla,googl,amzn,msft,meta,dis,nflx,sony,pep,tm&token=pk_6290c6cfc738427395be61ed91fffab5`;
 
 
 export const getQuotes = createAsyncThunk("quotes/getQuotes", () => {
@@ -17,7 +18,7 @@ const quotesSlice = createSlice({
     name: "quotes",
     initialState: {
         data: [],
-        quotesPerPage: 5,
+        quotesPerPage: 10,
         currentPage: 1,
         isLoading: true,
     },
